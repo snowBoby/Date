@@ -36,5 +36,6 @@ var allFives = new Date(2005, 4, 5, 17, 55, 55);
 ### 4、Date实例日期/时间组件方法：
 UTC日期指的是在没有时区偏差的情况下（将日期转换为GMT时间）的日期值。
 
-![Alt text](https://github.com/snowBoby/Date/blob/master/date1.png)
-![Alt text](https://github.com/snowBoby/Date/blob/master/date2.png)
+![Alt text](https://github.com/snowBoby/Date/blob/master/images/date_1.png)
+![Alt text](https://github.com/snowBoby/Date/blob/master/images/date_2.png)
+![Alt text](https://github.com/snowBoby/Date/blob/master/images/date2.png)
