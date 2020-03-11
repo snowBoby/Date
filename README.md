@@ -2,15 +2,16 @@
 Date引用类型；
 创建日期对象必须使用new Date()。Date(..)传入的参数必须为日期的毫秒数（即从UTC时间1970年1月1日午夜起至该日期止经过的毫秒数），如果不是毫秒数会在后台调用Date.parse()/Date.UTC()（具体调用哪个主要看参数类型，还有一点明显不同：**构造函数隐式调用Date.UTC()日期和时间都基于本地时区而非GMT来创建**），以此来指定日期和时间，而不带参数的话则使用当前的日期和时间。
 ```
-var someDate = new Date(Date.parse("May 25, 2004"));
+//new Date返回的都是本地时间，只不过基于创建的时间可以是GMT时间或本地时间。
+var someDate = new Date(Date.parse("May 25, 2004"));//Tue May 25 2004 00:00:00 GMT+0800 (中国标准时间)
 //等价于
-var someDate = new Date("May 25, 2004");
+var someDate = new Date("May 25, 2004");//Tue May 25 2004 00:00:00 GMT+0800 (中国标准时间)
 
-// GMT时间 2005年5月5日下午5:55:55 
-var allFives = new Date(Date.UTC(2005, 4, 5, 17, 55, 55));
-//等价于
-// 本地时间 2005年5月5日下午5:55:55 
-var allFives = new Date(2005, 4, 5, 17, 55, 55); 
+// 基于 GMT时间 创建2005年5月5日下午5:55:55 得到的本地时间：要在此基础上 + 时区差
+var allFives = new Date(Date.UTC(2005, 4, 5, 17, 55, 55)); //Fri May 06 2005 01:55:55 GMT+0800 (中国标准时间)
+//相差时区差 8小时
+// 基于 本地时间 创建2005年5月5日下午5:55:55 
+var allFives = new Date(2005, 4, 5, 17, 55, 55); //Thu May 05 2005 17:55:55 GMT+0800 (中国标准时间)
 ```
 ### 1、Date构造函数的方法：
 以下返回的都是毫秒数。
