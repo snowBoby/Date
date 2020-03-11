@@ -43,3 +43,15 @@ UTC日期指的是在没有时区偏差的情况下（将日期转换为GMT时�
 ![Alt text](https://github.com/snowBoby/Date/blob/master/images/date_1.png)
 ![Alt text](https://github.com/snowBoby/Date/blob/master/images/date_2.png)
 ![Alt text](https://github.com/snowBoby/Date/blob/master/images/date2.png)
+
+### 5、本地时间与UTC(GMT)时间转换
+* UTC(GMT)：整个地球分为二十四时区，每个时区都有自己的本地时间。在国际无线电通信场合，为了统一起见，使用一个统一的时间，称为通用协调时(UTC, Universal Time Coordinated)。UTC与格林尼治平均时(GMT, Greenwich Mean Time)一样，都与英国伦敦的本地时相同。
+* 本地时间：北京时区是东八区，领先UTC八个小时，在电子邮件信头的Date域记为+0800。
+
+**注意**：
+* 时区差格式为 符号+ 24小时制数字 + 分钟，如：北京与UTC时差记为+0800
+* 时区差东为正，西为负。
+
+**公式**：
+* UTC = 本地时间 - 时区差
+* UTC = 本地时间 + getTimezoneOffset(); 在Javascript中，Date对象提供了获取本地与UTC(GMT)时间差的函数getTimezoneOffset,该方法可返回格林威治时间和本地时间之间的时差，以分钟为单位。
